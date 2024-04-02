@@ -6,7 +6,15 @@ import os
 import base64
 
 # Environment setup
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = secrets.GOOGLE_APPLICATION_CREDENTIALS
+#os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = secrets.GOOGLE_APPLICATION_CREDENTIALS
+
+# Assuming GOOGLE_APPLICATION_CREDENTIALS is set to the path of the JSON key file
+service_account_path = os.getenv('GOOGLE_APPLICATION_CREDENTIALS')
+if service_account_path:
+    credentials = service_account.Credentials.from_service_account_file(service_account_path)
+    client = translate.Client(credentials=credentials)
+else:
+    raise EnvironmentError("The GOOGLE_APPLICATION_CREDENTIALS environment variable is not set.")
 
 # Translation function
 def translate_text(text, target_language='es'):
