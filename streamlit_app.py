@@ -6,7 +6,7 @@ import os
 import base64
 
 # Environment setup
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'smooth-zenith-397515-81d825818ab7.json'
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = secrets.GOOGLE_APPLICATION_CREDENTIALS
 
 # Translation function
 def translate_text(text, target_language='es'):
