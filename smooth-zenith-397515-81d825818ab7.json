@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "smooth-zenith-397515",
+  "private_key_id": "81d825818ab7766733dcd83712c7e14e4ef69429",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCzhOwrbpMWOux7\nUtiE5dI1YpJEGyHFM90Ghk6wqXJvzsGbX2xwU+3Ry3eO8R1/4wvpMD3g/bCANu5T\nnfMxooEidxO3NCIzH0GwGKV+m2vMVGwYx5cNpZKOJYuuf5RPIAVbbruL4BbCd+Eu\nTWisAfrb61ETm9JdaaxQAui2D/GlWI2uolzaMVYY2n0yTkHBA0zw8DE/HRxjXDZR\nwgbgH5xsAhWXAbEgyH4ibKr6iD1sls94s4jCf4kLgv3B9WDAyGFAodlJEBeS6E1U\nf7Utmw2errwq/1n6Uld8PP8BnzVMFCs37EWOogLVdNM4ulnf3OGPuGxehCPjMVCQ\nYcO4fGy/AgMBAAECggEAF+DpE9M0Ir4uZoOxOTw4pyaNaMcTHuAJ2QGpxeXuyuB9\nmuUpJL0v4mVmFHq4qczRm3BHStNz1BolFApBJwED8Z7/3bFEO03qYY9ltAmIX+LQ\nM3DuWWpaAX5iWLuvm+Fuf6hNr2AHUaa7KnrcHsUZ+9a5L2/dSNTy4/xUZ/iG9ASH\nNmyKVhATIw4/903y+sksc4EptfvVg+XUg1UJM2xoFA8foUXtWjspU3o0ziJhVJuv\nghBa7svQT2RjrrBijI1z4PIfgk6jLjJBvcRKTRR+7TUcjgYkx2Q23bjDA/iEI9Ly\nl8h4k8/fHaJo4gejtYnZm3RhxV+L3swOhlWY2xxdgQKBgQD0waCPOiOyrmu/ZRvN\nyy+TU2G2RM44btWSVCcDArex7tuVb9exW+WSIxCKQg0rX6sdr71JhrpTcMLEtCwc\niOOea1OWItKHwB6l2vPVkABJLXO3F5o2V6gNV1rewlCIiEVAdabAB4CveeeKJ6XD\nPgQcqA9GtcRkDrRZclad4UFEtwKBgQC7xBi55IFE4VjNxUVCSgvlkUDgkp4d/edD\nykQc6TkPrFE6hcH2rik4J/pjClcQH1VLQ13c5jZ5U/nZHDuQlWW6MAyLsTgnXuI+\n7allGKrIJrdTm7v7iLcG+W5wOIwRWIxmGPNcwinupOKIIjccoKpbB1uLLXK7klEw\nhxg/5czgOQKBgQCfZNnjbMGCxAR3iKkqxIAfOdYQlY6XQdbkjNk7JLHsttlZ4JRf\ndLF1ElDbOVjKPmt50dE76Pm/DVhKMevoSV2y9cJhrBvfPEa5THYvRrBo96i8PCq5\n6SwQRCtxlqpLwDMZX4VQ2ZH8tS8M0fUpyWF0KB6KtiVH5CufdM7j0qZm0QKBgEbS\n4MC9gEUK+wQitM0cQQCGmYIby6hkbScU1DxTfEJ9LOZ2LYNujf2wlrFk5RIfv3x0\nHKOF8mYxVryd+Zm/wG9KUHEgl53CHHTAEHUhqMl2URAoXe+y0da/nviVW7/vNoYM\nQz9pvYdWilvvC/qwX5GWZOFKc0xtFFLJokv30h+BAoGBANcaWnXhMMsNTJXa3mpu\nZOoCV8ZM9cXl3tDfR5SbX0cACVFU3hPjlO6lESLhVMLqIA7NSP/HX3tYF31xhsp4\nnFSd0DfjwPHGJMSvOgj9pF8Rtxynop1zihZ+Dc23oH+9MnA5ou00hQ2Bh5hl5mQX\npHnE7qV4HF4H2IY5CNcB8syr\n-----END PRIVATE KEY-----\n",
+  "client_email": "aeonix-translation-api@smooth-zenith-397515.iam.gserviceaccount.com",
+  "client_id": "117727307294818035145",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/aeonix-translation-api%40smooth-zenith-397515.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
