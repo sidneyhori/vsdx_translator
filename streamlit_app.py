@@ -5,6 +5,17 @@ import tempfile
 import base64
 from vsdx import VisioFile
 
+# Language options for translation
+language_options = {
+    "Spanish": "es",
+    "Portuguese": "pt",
+    "French": "fr",
+    "German": "de",
+    "Chinese (Simplified)": "zh-CN",
+    "Korean": "ko",
+    # Add more languages as needed
+}
+
 # Function to create a download link
 def create_download_link(data, filename):
     b64 = base64.b64encode(data).decode()
@@ -27,8 +38,12 @@ def authenticate_and_get_client(uploaded_file):
 
 def main():
     st.title("VSDX Translator - Multi files")
-    st.subheader("This version currently translates VSDX files from English to Spanish (LATAM).")
+    st.subheader("This version allows you to translate VSDX files into multiple languages.")
     
+    # Language selection
+    target_language = st.selectbox("Choose the language to translate to:", list(language_options.keys()))
+    target_language_code = language_options[target_language]
+
     uploaded_file = st.file_uploader("Upload Google Cloud Service Account JSON", type=["json"])
 
     if uploaded_file is not None:
@@ -38,11 +53,12 @@ def main():
         uploaded_files = st.file_uploader("Select .VSDX files", accept_multiple_files=True)
         
         if uploaded_files:
-            process_files(client, uploaded_files)
+            process_files(client, uploaded_files, target_language_code, target_language)
+
             st.success("Please refresh the page to restart the app and translate more files.")
 
 # Function to process uploaded VSDX files
-def process_files(client, uploaded_files):
+def process_files(client, uploaded_files, target_language_code, target_language):
     for uploaded_file in uploaded_files:
         with tempfile.NamedTemporaryFile(delete=False, suffix='.vsdx') as tmp_file:
             tmp_file.write(uploaded_file.getvalue())
@@ -55,7 +71,7 @@ def process_files(client, uploaded_files):
                     if shape.text:
                         total_word_count += len(shape.text.split())
 
-        st.info(f'Translating {uploaded_file.name}: {total_word_count} words to be translated. Please wait...')
+        st.info(f'Translating {uploaded_file.name} to {target_language}: {total_word_count} words to be translated. Please wait...')
 
         my_bar = st.progress(0)
 
@@ -64,7 +80,7 @@ def process_files(client, uploaded_files):
             for page in visio.pages:
                 for shape in page.all_shapes:
                     if shape.text:
-                        shape.text = translate_text(client, shape.text, 'es')
+                        shape.text = translate_text(client, shape.text, target_language_code)
                         word_count += len(shape.text.split())
                         percent_complete = int(word_count / total_word_count * 100)
                         percent_complete = min(percent_complete, 99)
@@ -74,11 +90,11 @@ def process_files(client, uploaded_files):
                 visio.save_vsdx(translated_file.name)
                 translated_filename = translated_file.name
         
-        st.success(f'File {uploaded_file.name} translated! Click the link below to download it.')
+        st.success(f'File {uploaded_file.name} translated to {target_language}! Click the link below to download it.')
 
         with open(translated_filename, "rb") as file:
-            translated_data = file.read()
-        st.markdown(create_download_link(translated_data, translate_text(client, uploaded_file.name, 'es')), unsafe_allow_html=True)
+            translated_data = file.read()        
+        st.markdown(create_download_link(translated_data, translate_text(client, uploaded_file.name, target_language_code)), unsafe_allow_html=True)
 
 if __name__ == "__main__":
     main()
