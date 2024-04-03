@@ -3,7 +3,6 @@ from google.oauth2 import service_account
 from google.cloud import translate_v2 as translate
 import tempfile
 import base64
-import json
 from vsdx import VisioFile
 
 # Function to create a download link
@@ -29,7 +28,6 @@ def authenticate_and_get_client(uploaded_file):
 def main():
     st.title("VSDX Translator - Multi files")
     st.subheader("This version currently translates VSDX files from English to Spanish (LATAM).")
-    st.write("Please upload the Google Cloud Service Account JSON file.")
     
     uploaded_file = st.file_uploader("Upload Google Cloud Service Account JSON", type=["json"])
 
@@ -80,7 +78,7 @@ def process_files(client, uploaded_files):
 
         with open(translated_filename, "rb") as file:
             translated_data = file.read()
-        st.markdown(create_download_link(translated_data, 'Translated_' + uploaded_file.name), unsafe_allow_html=True)
+        st.markdown(create_download_link(translated_data, translate_text(client, uploaded_file.name, 'es')), unsafe_allow_html=True)
 
 if __name__ == "__main__":
     main()
