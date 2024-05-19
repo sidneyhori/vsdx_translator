@@ -7,7 +7,7 @@ from vsdx import VisioFile
 
 
 # Display the logo
-st.image("Aeonix_logo_black.png", width=150)  # Adjust the width as needed
+st.image("Aeonix_logo_black.png", width=300)  # Adjust the width as needed
 
 # Language options for translation
 language_options = {
